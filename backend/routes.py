@@ -21,15 +21,15 @@ def register():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     if name ==None:
-        return jsonify({"msg": "Falta el nombre"}), 401
+        return jsonify({"msg": "Missing name"}), 401
     if email ==None:
-        return jsonify({"msg": "Falta el correo"}), 401
+        return jsonify({"msg": "Missing email"}), 401
     if password ==None:
-        return jsonify({"msg": "Falta la contraseña"}), 401
+        return jsonify({"msg": "Missing password"}), 401
     if '@' not in email:
-        return jsonify({"msg": "El correo debe contener @"}), 400
+        return jsonify({"msg": "Email must contain '@'."}), 400
     if len(password) <= 6:
-        return jsonify({"msg": "La contraseña debe tener más de 6 caracteres"}), 400
+        return jsonify({"msg": "Password must have more than 6 characters"}), 400
     
     user = User.query.filter_by(email=email).first()
 
