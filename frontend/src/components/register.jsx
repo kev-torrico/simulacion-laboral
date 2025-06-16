@@ -28,7 +28,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch(BASE_URL2 + "/api/register", {
+      const response = await fetch(BASE_URL + "/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
