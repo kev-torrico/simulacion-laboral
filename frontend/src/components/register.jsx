@@ -36,6 +36,7 @@ function Register() {
         body: JSON.stringify(inputs),
       });
       const data = await response.json();
+      console.log("Response:", data);
 
       if (!response.ok) {
         throw new Error(data.error);
@@ -47,6 +48,7 @@ function Register() {
       });
       setInputs({ name: "", email: "", password: "" });
     } catch (error) {
+      console.log(error);
       toaster.create({
         title: "An error has occurred",
         type: "error",
