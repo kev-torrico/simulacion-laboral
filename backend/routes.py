@@ -7,7 +7,7 @@ import bcrypt
 
 @app.route("/", methods=['GET'])
 def home():
-    return "<h1> Simulacion laboral </h1>"
+    return "<h1> Job simulation </h1>"
 
 @app.route("/api/users", methods=["GET"])
 def get_all_users():
