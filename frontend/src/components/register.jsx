@@ -21,7 +21,7 @@ function Register() {
     }
     if (inputs.password.length <= 6) {
       return toaster.create({
-        title: "Short password",
+        title: "Password must have more than 6 characters",
         type: "error",
         duration: 3000,
       });
