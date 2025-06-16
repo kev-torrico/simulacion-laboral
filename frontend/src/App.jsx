@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/home.jsx";
 import Register from "./components/register.jsx";
 
-export const BASE_URL = "https://simulacion-laboral-flask-app.onrender.com";
-
 function App() {
   return (
     <div>

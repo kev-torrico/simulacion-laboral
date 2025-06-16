@@ -19,7 +19,7 @@ function Register() {
         duration: 3000,
       });
     }
-    if (inputs.password.length < 6) {
+    if (inputs.password.length <= 6) {
       return toaster.create({
         title: "Short password",
         type: "error",
@@ -28,7 +28,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch(BASE_URL + "/api/register", {
+      const response = await fetch(BASE_URL2 + "/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,6 @@ function Register() {
         body: JSON.stringify(inputs),
       });
       const data = await response.json();
-      console.log("Response:", data);
 
       if (!response.ok) {
         throw new Error(data.error);
@@ -48,7 +47,6 @@ function Register() {
       });
       setInputs({ name: "", email: "", password: "" });
     } catch (error) {
-      console.log(error);
       toaster.create({
         title: "An error has occurred",
         type: "error",
@@ -57,7 +55,14 @@ function Register() {
       });
     }
   };
-
+  const handleCancel = () => {
+    setInputs({
+      name: "",
+      email: "",
+      password: "",
+      // todos los campos que tengas
+    });
+  };
   return (
     <>
       <Center mt={100}>
@@ -71,7 +76,7 @@ function Register() {
           <Card.Body>
             <Stack gap="4" w="full">
               <Field.Root>
-                <Field.Label>First Name</Field.Label>
+                <Field.Label>Full name</Field.Label>
                 <Input
                   value={inputs.name}
                   onChange={(e) =>
@@ -100,7 +105,9 @@ function Register() {
             </Stack>
           </Card.Body>
           <Card.Footer justifyContent="flex-end">
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline" onClick={handleCancel}>
+              Cancel
+            </Button>
             <Button
               variant="solid"
               onClick={(e) => {
