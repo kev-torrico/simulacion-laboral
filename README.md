@@ -34,6 +34,9 @@ URL principal: https://simulacion-laboral-flask-app.onrender.com
 Para consultar los usuarios registrados, se puede acceder a la siguiente ruta:
 https://simulacion-laboral-flask-app.onrender.com/api/users
 
+**Video**:
+URL video de explicación: https://youtu.be/LHnzCdgULzI
+
 ## 📌 Cómo Inicializar el Proyecto  
 
 Para ejecutar correctamente el proyecto y visualizar la interfaz del **frontend** y **backend**, sigue estos pasos:  
